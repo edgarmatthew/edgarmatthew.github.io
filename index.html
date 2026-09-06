@@ -1,53 +1,476 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Matthew C. Edgar</title>
-    </head>
+    <title>Matthew C. Edgar</title>
 
-    <body>
-        <header>
-            <h1>Matthew Edgar</h1>
-            <p>UC Berkeley Graduate | Aspiring Software Developer</p>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+        html {
+            scroll-behavior: smooth;
+        }
 
-        <main>
-            <section id="about">
-                <h2>About Me</h2>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f8fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #111827;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background-color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .hero h3 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #4b5563;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #6b7280;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #111827;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background-color: #374151;
+        }
+
+        .button-secondary {
+            background-color: transparent;
+            border: 1px solid #111827;
+            color: #111827;
+        }
+
+        .button-secondary:hover {
+            background-color: #f3f4f6;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #111827;
+        }
+
+        .about {
+            background-color: #f7f8fa;
+        }
+
+        .about p {
+            max-width: 850px;
+            font-size: 17px;
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .projects {
+            background-color: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+            background-color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .project-card p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .skills {
+            background-color: #f7f8fa;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background-color: white;
+            border: 1px solid #d1d5db;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .contact {
+            background-color: #111827;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+
+        .contact a {
+            color: white;
+        }
+
+        footer {
+            background-color: #030712;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <h2>Matthew C. Edgar</h2>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO / MAIN INTRO -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1>Matthew C. Edgar</h1>
+
+            <h3>
+                Computer Science • Scientific Computing • Software Development
+            </h3>
+
+            <p>
+                I'm a recent UC Berkeley graduate with a background in chemical biology,
+                computational science, mathematics, and programming. I'm currently
+                building software projects and expanding my work in computer science.
+            </p>
+
+            <!-- Replace # with your actual links -->
+            <a class="button" href="#projects">View Projects</a>
+
+            <a
+                class="button button-secondary"
+                href="https://github.com/YOUR-GITHUB-USERNAME"
+                target="_blank">
+                GitHub
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I earned my bachelor's degree from the University of California,
+            Berkeley, where I studied chemical biology with a concentration in
+            computational chemistry.
+        </p>
+
+        <p>
+            My academic background includes programming, numerical analysis,
+            linear algebra, probability, differential equations, chemistry,
+            and scientific computing.
+        </p>
+
+        <p>
+            Before attending Berkeley, I served in the United States Navy as a
+            Machinist's Mate, working with mechanical systems, engineering
+            operations, and laboratory quality control.
+        </p>
+
+        <p>
+            I am currently developing my software engineering skills through
+            projects in C, Python, web development, and computer science.
+        </p>
+
+    </section>
+
+
+    <!-- PROJECTS
+    <section class="projects" id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+
+            <!-- PROJECT 1
+            <div class="project-card">
+
+                <h3>Readability Analyzer</h3>
+
                 <p>
-                    Welcome to my website. I'm a UC Berkeley Chemical Biology graduate and US Navy veteran making a career change from pre-medicine to computer science and software development.
+                    A C program that analyzes text and estimates its reading
+                    grade level using the Coleman-Liau index.
                 </p>
-            </section>
 
-            <section id="my projects">
-                <h2>Projects</h2>
+                <a href="#" target="_blank">
+                    View Project →
+                </a>
 
-                <h3>Project One</h3>
-                <p>Coming soon.</p>
+            </div>
+            -->
 
-                <h3>Project Two</h3>
-                <p>Coming soon.</p>
-            </section>
+            <!-- PROJECT 2 
+            <div class="project-card">
 
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>Email: matthew.c.edgar@icloud.com</p>
-                <p>GitHub: your-github</p>
-                <p><a href="https://www.linkedin.com/in/matthew-edgar-b60870430/">LinkedIn</a></p>
-            </section>
-        </main>
+                <h3>Python Bill Calculator</h3>
 
-        <footer>
-            <p>© 2026 Matthew C. Edgar</p>
-        </footer>
-    </body>
+                <p>
+                    A Python application for calculating and dividing expenses
+                    using user-provided values.
+                </p>
+
+                <a href="#" target="_blank">
+                    View Project →
+                </a>
+
+            </div>
+            -->
+
+
+            <!-- PROJECT 3 -->
+            <!--
+            <div class="project-card">
+
+                <h3>Personal Website</h3>
+
+                <p>
+                    This website, built from scratch using HTML and CSS and
+                    deployed using GitHub Pages.
+                </p>
+
+                <a href="#" target="_blank">
+                    View Source →
+                </a>
+
+            </div>
+            -->
+
+            <!-- ADD MORE PROJECTS BY COPYING THIS CARD
+
+            <div class="project-card">
+
+                <h3>Project Name</h3>
+
+                <p>
+                    Describe what the project does here.
+                </p>
+
+                <a href="#" target="_blank">
+                    View Project →
+                </a>
+
+            </div>
+
+            -->
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skill-list">
+
+            <span class="skill">Python</span>
+
+            <span class="skill">C</span>
+
+            <span class="skill">C++</span>
+
+            <span class="skill">HTML</span>
+
+            <span class="skill">CSS</span>
+
+            <span class="skill">Git</span>
+
+            <span class="skill">GitHub</span>
+
+            <span class="skill">MATLAB</span>
+
+            <span class="skill">Scientific Computing</span>
+
+            <span class="skill">Numerical Analysis</span>
+
+            <span class="skill">Data Analysis</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+            Interested in working together or discussing an opportunity?
+        </p>
+
+        <!-- Replace these with your actual information -->
+
+        <p>
+            Email:
+            <a href="matthew.c.edgar@icloud.com">
+                matthew.c.edgar@icloud.com
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a
+                href="https://github.com/edgarmatthew"
+                target="_blank">
+                github.com/edgarmatthew
+            </a>
+        </p>
+
+        <p>
+            LinkedIn:
+            <a
+                href="https://www.linkedin.com/in/matthew-edgar-b60870430/">LinkedIn</a>
+                LinkedIn Profile
+            </a>
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 Matthew C. Edgar
+
+    </footer>
+
+</body>
 </html>
+```
