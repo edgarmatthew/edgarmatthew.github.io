@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume | Matthew C. Edgar</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f8fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: #111827;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+
+        /* RESUME HEADER */
+
+        .resume-header {
+            background-color: white;
+            padding: 70px 10%;
+        }
+
+        .resume-header h1 {
+            font-size: 48px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .resume-header p {
+            color: #6b7280;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+
+        /* BUTTON */
+
+        .button {
+            display: inline-block;
+            background-color: #111827;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+        }
+
+        .button:hover {
+            background-color: #374151;
+        }
+
+
+        /* RESUME */
+
+        .resume {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 40px;
+        }
+
+        .resume-section {
+            margin-bottom: 50px;
+        }
+
+        .resume-section h2 {
+            font-size: 28px;
+            color: #111827;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+
+        .entry {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .entry h3 {
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .entry p {
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+
+        .entry ul {
+            margin-left: 20px;
+            color: #4b5563;
+        }
+
+        .entry li {
+            margin-bottom: 5px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #030712;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .resume-header h1 {
+                font-size: 38px;
+            }
+
+            .resume {
+                padding: 40px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h2>Matthew C. Edgar</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+
+    <!-- RESUME HEADER -->
+
+    <section class="resume-header">
+
+        <h1>Resumé</h1>
+
+        <p>
+            Education, professional experience, technical skills, and selected projects.
+        </p>
+
+        <!-- Put your resume PDF in your GitHub repository -->
+        <a
+            class="button"
+            href="/Matthew_Edgar_Resume.pdf"
+            download>
+            Download PDF
+        </a>
+
+    </section>
+
+
+
+    <!-- RESUME -->
+
+    <main class="resume">
+
+
+        <!-- EDUCATION -->
+
+        <section class="resume-section">
+
+            <h2>Education</h2>
+
+
+            <div class="entry">
+
+                <h3>University of California, Berkeley</h3>
+
+                <p>
+                    Bachelor of Science in Chemical Biology<br>
+                    Concentration in Computational Chemistry<br>
+                    May 2026
+                </p>
+
+            </div>
+
+
+            <div class="entry">
+
+                <h3>San Diego Mesa College</h3>
+
+                <p>
+                    Associate of Science in Chemistry<br>
+                    Associate of Arts in Math and Pre-Engineering Math<br>
+                    Graduated with Honors<br>
+                    May 2024
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- EXPERIENCE -->
+
+        <section class="resume-section">
+
+            <h2>Experience</h2>
+
+
+            <div class="entry">
+
+                <h3>
+                    Williams Research Lab — University of California, Berkeley
+                </h3>
+
+                <p>
+                    <i>Undergraduate Researcher</i><br>
+                    January 2025 – May 2026
+                </p>
+
+                <ul>
+                    <li>
+                        Designed and assembled a nanoelectrospray apparatus,
+                        including custom circuitry and resistive components.
+                    </li>
+
+                    <li>
+                        Conducted 200 nanoelectrospray ionization experiments
+                        and developed Python scripts to collect and analyze their data.
+                    </li>
+
+                    <li>
+                        First author on a pending manuscript based on this research.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="entry">
+
+                <h3>LifeWest Ambulance Company</h3>
+
+                <p>
+                    <i>Emergency Medical Technician</i><br>
+                    May 2024 – June 2025
+                </p>
+
+                <ul>
+                    <li>
+                        Transported injured and critically ill patients to and
+                        from medical facilities across the San Francisco Bay Area.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="entry">
+
+                <h3>United States Navy</h3>
+
+                <p>
+                    <i>Machinist's Mate (E-5)</i><br>
+                    June 2017 – June 2021
+                </p>
+
+                <ul>
+                    <li>
+                        Active-duty enlisted sailor in the engineering departments
+                        of the USS Ardent and USS Makin Island.
+                    </li>
+
+                    <li>
+                        Operated and maintained shipboard engineering systems,
+                        including refrigeration, diesel engines, and
+                        reverse-osmosis systems.
+                    </li>
+
+                    <li>
+                        Maintained fuel and oil systems and kept watchstanding
+                        logs for quality assurance.
+                    </li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROJECTS -->
+
+        <section class="resume-section">
+
+            <h2>Projects</h2>
+
+
+            <div class="entry">
+
+                <h3>Monte Carlo Sampler using Egg Box Potential</h3>
+
+                <p><i>Python</i></p>
+
+                <ul>
+                    <li>
+                        Created a Python script that uses the Monte Carlo method
+                        to estimate the egg box energy integral of a particle.
+                    </li>
+
+                    <li>
+                        Applied different forces to the particle and simulated
+                        the positions of two interacting particles.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="entry">
+
+                <h3>Personal Website</h3>
+
+                <p>
+                    <i>HTML, Jekyll, CSS, GitHub Pages</i>
+                </p>
+
+                <ul>
+                    <li>
+                        Developed a personal portfolio website to display my
+                        research, professional experience, and software projects.
+                    </li>
+
+                    <li>
+                        Built and deployed this site using GitHub Pages and Jekyll.
+                    </li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TECHNICAL SKILLS -->
+
+        <section class="resume-section">
+
+            <h2>Technical Skills</h2>
+
+            <div class="entry">
+
+                <p>
+                    <b>Programming Languages:</b>
+                    Python, C++, MATLAB
+                </p>
+
+                <p>
+                    <b>Scientific Computing:</b>
+                    NumPy, Matplotlib, Monte Carlo Methods,
+                    Numerical Analysis and Estimation
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 Matthew C. Edgar
+    </footer>
+
+
+</body>
+
+</html>
